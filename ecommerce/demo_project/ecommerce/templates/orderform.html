@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="login-box mt-5" style="margin-bottom:200px;">
+    <h1 class="text-center text-white">Enter Details</h1>
+<form method="POST" style="width:300px">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label text-white  ">Phone No</label>
+    <input type="text" class="form-control" name="phone">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label text-white">Delivery Address</label>
+    <input type="text" class="form-control" name="address">
+  </div>
+    <div class="mb-3">
+    <label class="form-label text-white">Pin</label>
+    <input type="text" class="form-control" name="pin">
+  </div>
+      <button type="submit" class="btn_1">Submit</button>
+</form>
+
+    </div>
+
+{% endblock %}

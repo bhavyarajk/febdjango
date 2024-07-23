@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br><br><br>
+<div class="row" >
+
+    <img src="{{ cate_obj.image.url }}" height="400px;" width="100%">
+</div>
+<div class="container-fluid" style="margin-bottom:70px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center fw-bold">{{cate_obj.name}}</h1>
+            <p style="align-item:justify;">{{cate_obj.desc}}</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        {% for i in pro_obj %}
+        <div class="col-md-3 col-6">
+            <div  class="card" style="width: 15rem;">
+              <a href="{% url 'shop:product_details' i.id %}"><img src="{{ i.image.url }}" class="card-img-top" alt="..." style="height: 14rem;"></a>
+              <div class="card-body">
+                <h5 class="card-title">{{ i.name }}</h5>
+                  <p class="card-text">{{ i.price }}</p>
+
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
